@@ -10,6 +10,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    lazy var titleLabel: UILabel = {
+         let label = UILabel()
+         label.backgroundColor = .white
+         label.textColor = .systemBlue
+         label.textAlignment = .center
+         label.text = "HOPS"
+         label.font = UIFont(name: "savoyeLetPlain", size: 50)
+         label.translatesAutoresizingMaskIntoConstraints = false
+         return label
+     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
