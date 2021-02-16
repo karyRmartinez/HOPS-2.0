@@ -27,6 +27,15 @@ class HomeViewController: UIViewController {
         image.image = UIImage(named: "ImageEars")
            return image
        }()
+    lazy var loginButton: UIButton = {
+          let button = UIButton()
+          button.setTitle("Hop On", for: .normal)
+        button.backgroundColor = .systemGreen
+          button.translatesAutoresizingMaskIntoConstraints = false
+          button.layer.cornerRadius = 12
+         // button.addTarget(self, action: #selector(self.startButtonPressed(sender:)), for: .touchUpInside)
+          return button
+      }()
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +48,7 @@ class HomeViewController: UIViewController {
     private func addSubviews() {
         self.view.addSubview(titleLabel)
         self.view.addSubview(imageViewSet)
+        self.view.addSubview(loginButton)
     }
     private func settingUpConstraints() {
         NSLayoutConstraint.activate([
@@ -50,6 +60,12 @@ class HomeViewController: UIViewController {
         imageViewSet.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         imageViewSet.widthAnchor.constraint(equalToConstant: 200),
         imageViewSet.heightAnchor.constraint(equalToConstant: 200),
+        
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+           loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
+           loginButton.widthAnchor.constraint(equalToConstant: 140),
+           loginButton.heightAnchor.constraint(equalToConstant: 35),
+                   
         ])
     }
 
