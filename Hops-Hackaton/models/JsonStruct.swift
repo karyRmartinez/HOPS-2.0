@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct Welcome: Codable {
+
+// MARK: - Welcome
+struct NewsWrapper: Codable {
     let status: String
     let totalResults: Int
     let articles: [Article]
@@ -15,22 +17,24 @@ struct Welcome: Codable {
 
 // MARK: - Article
 struct Article: Codable {
-    let source: Source
-    let author, title, articleDescription: String
-    let url: String
-    let urlToImage: String
-    let publishedAt: Date
-    let content: String
+//    let source: [Source]?
+//    let author, title, articleDescription: String?
+    let title: String
+//    let url: String?
+    let urlToImage: String?
+//    let publishedAt: Date?
+//    let content: String?
 
-    enum CodingKeys: String, CodingKey {
-        case source, author, title
-        case articleDescription = "description"
-        case url, urlToImage, publishedAt, content
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case  author, title
+//        case articleDescription = "description"
+//        case urlToImage = "Url To Image"
+//        case publishedAt = "published at"
+//    }
 }
 
 // MARK: - Source
-struct Source: Codable {
-    let id: String?
-    let name: String
-}
+//struct Source: Codable {
+//    let id: String?
+//    let name: String?
+//}

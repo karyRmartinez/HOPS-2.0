@@ -12,26 +12,16 @@ import UIKit
 class MainTabBarViewController: UITabBarController {
 
     lazy var listViewController = UINavigationController(rootViewController: FeedViewController())
-    lazy var scanListViewController = UINavigationController(rootViewController: FeedViewController())
+    lazy var scanListViewController = UINavigationController(rootViewController: ScannnerViewController())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         listViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 0)
-       
-        self.viewControllers = [listViewController]
+        scanListViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"doc.text.magnifyingglass" ), tag: 0)
+        self.viewControllers = [listViewController,scanListViewController]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }
