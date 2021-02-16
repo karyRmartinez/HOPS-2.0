@@ -12,7 +12,7 @@ class NewsAPIManager {
     private init() {}
     static let manager = NewsAPIManager()
     
-    func getRecipes(searchString: String, completionHandler: @escaping (Result<[Article], AppErrors>) -> Void) {
+    func getNews(searchString: String, completionHandler: @escaping (Result<[Article], AppErrors>) -> Void) {
         
    let urlString =
 "http://newsapi.org/v2/everything?q=vegan&from=2021-01-16&sortBy=english&apiKey=\(Secrets.NewsAPIKey)"

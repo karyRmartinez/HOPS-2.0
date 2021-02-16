@@ -11,7 +11,20 @@ import UIKit
 
 class FeedViewController: UIViewController {
    
-  
+  lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: view.frame.width, height: 400)
+        let newsFeedView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
+        newsFeedView.register(NewsFeedCollectionViewCell.self, forCellWithReuseIdentifier: "theCell")
+        newsFeedView.backgroundColor = .white
+         // newsFeedView.dataSource = self
+       // newsFeedView.delegate = self
+        return newsFeedView
+    }()
+    
     
 
     
