@@ -15,6 +15,7 @@
 		6B55697925DAEF2B0044565D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B55697725DAEF2B0044565D /* LaunchScreen.storyboard */; };
 		6B55698625DB47100044565D /* FeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55698525DB47100044565D /* FeedCollectionViewController.swift */; };
 		6B55698825DB47BF0044565D /* MainHomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55698725DB47BF0044565D /* MainHomeTabBarViewController.swift */; };
+		6B55698B25DB96610044565D /* JsonStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55698A25DB96610044565D /* JsonStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6B55697A25DAEF2B0044565D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B55698525DB47100044565D /* FeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewController.swift; sourceTree = "<group>"; };
 		6B55698725DB47BF0044565D /* MainHomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeTabBarViewController.swift; sourceTree = "<group>"; };
+		6B55698A25DB96610044565D /* JsonStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		6B55696025DAEF2A0044565D = {
 			isa = PBXGroup;
 			children = (
+				6B55698925DB962A0044565D /* models */,
 				6B55698025DB04460044565D /* ViewControllers */,
 				6B55696B25DAEF2B0044565D /* Hops-Hackaton */,
 				6B55696A25DAEF2B0044565D /* Products */,
@@ -79,6 +82,14 @@
 				6B55698725DB47BF0044565D /* MainHomeTabBarViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6B55698925DB962A0044565D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6B55698A25DB96610044565D /* JsonStruct.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				6B55697125DAEF2B0044565D /* HomeViewController.swift in Sources */,
 				6B55696D25DAEF2B0044565D /* AppDelegate.swift in Sources */,
 				6B55696F25DAEF2B0044565D /* SceneDelegate.swift in Sources */,
+				6B55698B25DB96610044565D /* JsonStruct.swift in Sources */,
 				6B55698825DB47BF0044565D /* MainHomeTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
