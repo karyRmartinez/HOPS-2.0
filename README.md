@@ -12,3 +12,8 @@ Clone the repo and install the dependencies.
 ```bash
 git clone https://github.com/karyRmartinez/HOPS-2.0.git
 ```
+### Barcode
+
+Using VisionFramework
+* Previewing live video
+* Detecting Barcodes
