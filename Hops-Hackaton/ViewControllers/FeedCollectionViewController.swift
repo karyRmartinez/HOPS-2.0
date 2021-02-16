@@ -59,7 +59,7 @@ private let apiClient = NewsAPIManager()
           }
       }
 private func NavigationBarTitle() {
-       self.title = " WELCOME "
+       self.title = " News "
     view.tintColor = .systemGreen
    }
 private func collectionViewConstraints() {

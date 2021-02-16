@@ -66,6 +66,10 @@ class CategoryViewController: UIViewController {
          stackView.distribution = .fillEqually
          return stackView
      }()
+    private func NavigationBarTitle() {
+        self.title = "Explore"
+     view.tintColor = .systemGreen
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

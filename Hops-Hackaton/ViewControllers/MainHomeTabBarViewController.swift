@@ -19,8 +19,8 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        listViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 0)
-        scanListViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"doc.text.magnifyingglass" ), tag: 0)
+        listViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "doc.plaintext"), tag: 0)
+        scanListViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"barcode.viewfinder" ), tag: 0)
         categotylist.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"doc.text.magnifyingglass" ), tag: 0)
         self.viewControllers = [listViewController,scanListViewController,categotylist]
     }
