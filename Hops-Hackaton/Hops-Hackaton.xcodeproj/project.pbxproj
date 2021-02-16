@@ -21,6 +21,8 @@
 		6B55699225DB9AC80044565D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55699125DB9AC80044565D /* Secrets.swift */; };
 		6B55699425DB9BE70044565D /* NetworkHelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55699325DB9BE70044565D /* NetworkHelperManager.swift */; };
 		6B55699725DB9EA60044565D /* NewsFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55699625DB9EA60044565D /* NewsFeedCollectionViewCell.swift */; };
+		6B55699925DBA5450044565D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55699825DBA5450044565D /* DetailViewController.swift */; };
+		6BE4579E25DC3E4700BEF44C /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		6B55699125DB9AC80044565D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		6B55699325DB9BE70044565D /* NetworkHelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperManager.swift; sourceTree = "<group>"; };
 		6B55699625DB9EA60044565D /* NewsFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B55699825DBA5450044565D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			children = (
 				6B55698525DB47100044565D /* FeedCollectionViewController.swift */,
 				6B55698725DB47BF0044565D /* MainHomeTabBarViewController.swift */,
+				6B55699825DBA5450044565D /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				6B55698F25DB998F0044565D /* AppErrors.swift */,
 				6B55699125DB9AC80044565D /* Secrets.swift */,
 				6B55699325DB9BE70044565D /* NetworkHelperManager.swift */,
+				6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */,
 			);
 			path = networkHelpers;
 			sourceTree = "<group>";
@@ -197,10 +203,12 @@
 				6B55699025DB998F0044565D /* AppErrors.swift in Sources */,
 				6B55699225DB9AC80044565D /* Secrets.swift in Sources */,
 				6B55699425DB9BE70044565D /* NetworkHelperManager.swift in Sources */,
+				6B55699925DBA5450044565D /* DetailViewController.swift in Sources */,
 				6B55698625DB47100044565D /* FeedCollectionViewController.swift in Sources */,
 				6B55698E25DB99680044565D /* APIClient.swift in Sources */,
 				6B55697125DAEF2B0044565D /* HomeViewController.swift in Sources */,
 				6B55699725DB9EA60044565D /* NewsFeedCollectionViewCell.swift in Sources */,
+				6BE4579E25DC3E4700BEF44C /* ImageHelper.swift in Sources */,
 				6B55696D25DAEF2B0044565D /* AppDelegate.swift in Sources */,
 				6B55696F25DAEF2B0044565D /* SceneDelegate.swift in Sources */,
 				6B55698B25DB96610044565D /* JsonStruct.swift in Sources */,

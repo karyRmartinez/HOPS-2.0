@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class FeedViewController: UIViewController {
+private let apiClient = NewsAPIManager()
+    
     var allNews = [Article]() {
           didSet {
               collectionView.reloadData()
@@ -24,25 +26,19 @@ class FeedViewController: UIViewController {
         let newsFeedView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
         newsFeedView.register(NewsFeedCollectionViewCell.self, forCellWithReuseIdentifier: "theCell")
-        newsFeedView.backgroundColor = .white
-         // newsFeedView.dataSource = self
-       // newsFeedView.delegate = self
+    newsFeedView.backgroundColor = .white
         return newsFeedView
     }()
-    
-    
 
-    
-   
     override func viewDidLoad() {
         super.viewDidLoad()
       // Do any additional setup after loading the view.
         view.backgroundColor = .white
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+       collectionView.delegate = self
+      collectionView.dataSource = self
         NavigationBarTitle()
         addSubview()
-       // loadAPIData()
+      loadAPIData()
         collectionViewConstraints()
     }
     //MARK: addSubViews
@@ -52,20 +48,19 @@ class FeedViewController: UIViewController {
      }
     //MARK: Private Functions
     private func loadAPIData() {
-        NewsAPIManager.manager.getNews { (result) in
-              DispatchQueue.main.async {
-                  switch result {
-                  case .success(let dataFromOnline):
-                    self.allNews = dataFromOnline
-                      dump(dataFromOnline)
-                  case.failure(let error):
-                      print(error)
-                  }
-              }
+        apiClient.getNews { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+              print(error)
+            case .success(let newsonline):
+                self?.allNews = newsonline
+                dump(newsonline)
+            }
           }
       }
 private func NavigationBarTitle() {
        self.title = " WELCOME "
+    view.tintColor = .systemGreen
    }
 private func collectionViewConstraints() {
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,4 +73,41 @@ private func collectionViewConstraints() {
     
 }
 //MARK: Extensions
+extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedRecipe = allNews[indexPath.row]
+        let detailViewController = DetailViewController()
+        detailViewController.currentNews = selectedRecipe
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allNews.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "theCell", for: indexPath) as! NewsFeedCollectionViewCell
+        let currentNewsFeed = allNews[indexPath.row]
+        cell.titleLabel.text = currentNewsFeed.title
 
+        ImageHelper.shared.fetchImage(urlString: currentNewsFeed.urlToImage!) { (result) in
+               DispatchQueue.main.async {
+                   switch result {
+                   case .failure(let error):
+                       print(error)
+                   case .success(let imageFromOnline):
+                    cell.ImageView.image = imageFromOnline
+                   }
+               }
+           }
+        return cell
+    }
+    
+    
+}
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collctionViewLayout: UICollectionViewLayout, sizeForItemAt
+        indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 350, height: 350)
+    }
+}
