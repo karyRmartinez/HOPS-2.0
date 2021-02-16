@@ -13,6 +13,7 @@ class MainTabBarViewController: UITabBarController {
 
     lazy var listViewController = UINavigationController(rootViewController: FeedViewController())
     lazy var scanListViewController = UINavigationController(rootViewController: ScannnerViewController())
+    lazy var categotylist = UINavigationController(rootViewController: CategoryViewController())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,8 @@ class MainTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         listViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 0)
         scanListViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"doc.text.magnifyingglass" ), tag: 0)
-        self.viewControllers = [listViewController,scanListViewController]
+        categotylist.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName:"doc.text.magnifyingglass" ), tag: 0)
+        self.viewControllers = [listViewController,scanListViewController,categotylist]
     }
  
 
