@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class FeedViewController: UIViewController {
+    var allNews = [Article]() {
+          didSet {
+              collectionView.reloadData()
+          }
+      }
    
   lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,16 +36,44 @@ class FeedViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+      // Do any additional setup after loading the view.
         view.backgroundColor = .white
-       
-        
-        
-        // Do any additional setup after loading the view.
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+        NavigationBarTitle()
+        addSubview()
+       // loadAPIData()
+        collectionViewConstraints()
     }
-    
+    //MARK: addSubViews
+     
+     func addSubview() {
+         self.view.addSubview(collectionView)
+     }
     //MARK: Private Functions
- 
-    
+    private func loadAPIData() {
+        NewsAPIManager.manager.getNews { (result) in
+              DispatchQueue.main.async {
+                  switch result {
+                  case .success(let dataFromOnline):
+                    self.allNews = dataFromOnline
+                      dump(dataFromOnline)
+                  case.failure(let error):
+                      print(error)
+                  }
+              }
+          }
+      }
+private func NavigationBarTitle() {
+       self.title = " WELCOME "
+   }
+private func collectionViewConstraints() {
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: 0).isActive = true
+    collectionView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+    collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+    collectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+     }
     
     
 }
