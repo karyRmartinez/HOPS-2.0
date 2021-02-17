@@ -12,7 +12,7 @@ class NewsAPIManager {
     
     func getNews(completion: @escaping (Result<[Article], Error>) -> ()) {
     
-    let endpointURLString = "http://newsapi.org/v2/everything?q=vegan&from=2021-01-16&sortBy=english&totalResults=10&apiKey=\(Secrets.NewsAPIKey)"
+    let endpointURLString = "http://newsapi.org/v2/everything?q=vegan&from=2021&sortBy=english&totalResults=10&apiKey=\(Secrets.NewsAPIKey)"
     
     guard let url = URL(string: endpointURLString) else {
       print("bad url")

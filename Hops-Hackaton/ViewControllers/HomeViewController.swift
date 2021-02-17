@@ -33,9 +33,14 @@ class HomeViewController: UIViewController {
         button.backgroundColor = .systemGreen
           button.translatesAutoresizingMaskIntoConstraints = false
           button.layer.cornerRadius = 12
-         // button.addTarget(self, action: #selector(self.startButtonPressed(sender:)), for: .touchUpInside)
+         button.addTarget(self, action: #selector(self.startButtonPressed(sender:)), for: .touchUpInside)
           return button
       }()
+    
+    @objc func startButtonPressed(sender: UIButton) {
+    //self.animateView(sender)
+    self.navigationController?.pushViewController(FeedViewController(), animated: true)
+    }
        
     override func viewDidLoad() {
         super.viewDidLoad()
