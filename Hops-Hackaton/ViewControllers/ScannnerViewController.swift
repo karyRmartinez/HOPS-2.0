@@ -22,7 +22,10 @@ class ScannnerViewController: UIViewController {
         }
         self.processClassification(request)
       }
-
+    private func NavigationBarTitle() {
+        self.title = " Scan "
+     view.tintColor = .systemGreen
+    }
       // MARK: - Override Functions
       override func viewDidLoad() {
         super.viewDidLoad()
