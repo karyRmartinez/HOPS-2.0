@@ -78,7 +78,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedRecipe = allNews[indexPath.row]
         let detailViewController = DetailViewController()
-        detailViewController.currentNews = selectedRecipe
+        //detailViewController.currentNews = selectedRecipe
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -90,6 +90,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "theCell", for: indexPath) as! NewsFeedCollectionViewCell
         let currentNewsFeed = allNews[indexPath.row]
         cell.titleLabel.text = currentNewsFeed.title
+        cell.publishedLabel.text = currentNewsFeed.author
 
         ImageHelper.shared.fetchImage(urlString: currentNewsFeed.urlToImage!) { (result) in
                DispatchQueue.main.async {

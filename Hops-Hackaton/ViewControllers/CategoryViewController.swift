@@ -13,10 +13,11 @@ class CategoryViewController: UIViewController {
     lazy var IntroLabel: UILabel = {
         let label = UILabel()
             label.font = UIFont(name: "Optima-BOld", size: 20)
+        label.text = "Vegan and Cruelty Free"
             label.textAlignment = .center
             label.adjustsFontSizeToFitWidth = true
             label.numberOfLines = 2
-            label.textColor = .black
+            label.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
            label.translatesAutoresizingMaskIntoConstraints = false
           return label
@@ -26,7 +27,7 @@ class CategoryViewController: UIViewController {
     let button = UIButton()
      button.setTitle("Beauty", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-       // button.addTarget(self, action: #selector(answerButtonPressed(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(BeautyButtonPressed(sender:)), for: .touchUpInside)
     button.layer.cornerRadius = 12
            return button
        }()
@@ -43,7 +44,7 @@ class CategoryViewController: UIViewController {
      button.setTitle("Eats", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     button.layer.cornerRadius = 12
-//  button.addTarget(self, action: #selector(answerButtonPressed(sender:)), for: .touchUpInside)
+  button.addTarget(self, action: #selector(EatsButtonPressed(sender:)), for: .touchUpInside)
             return button
          }()
 
@@ -71,9 +72,14 @@ class CategoryViewController: UIViewController {
      view.tintColor = .systemGreen
     }
     @objc func CompaniesButtonPressed(sender: UIButton) {
-       //self.animateView(sender)
        self.navigationController?.pushViewController(CompaniesButtonViewController(), animated: true)
        }
+    @objc func BeautyButtonPressed(sender: UIButton) {
+         self.navigationController?.pushViewController(BeautyViewController(), animated: true)
+         }
+    @objc func EatsButtonPressed(sender: UIButton) {
+            self.navigationController?.pushViewController(VeganRecipesViewController(), animated: true)
+            }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
