@@ -1,16 +1,15 @@
 //
-//  DetailViewController.swift
+//  BeautyViewController.swift
 //  Hops-Hackaton
 //
-//  Created by Kary Martinez on 2/16/21.
+//  Created by Kary Martinez on 2/18/21.
 //  Copyright © 2021 Kary Martinez. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class DetailViewController: UIViewController,WKNavigationDelegate {
-
+class BeautyViewController: UIViewController,WKNavigationDelegate {
         var webView: WKWebView!
     
         override func loadView() {
@@ -22,10 +21,9 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
          
          override func viewDidLoad() {
              super.viewDidLoad()
-             let url = URL(string: "https://vegnews.com/2021/1/Beyond-Meat-Pepsi-Plant-Based-Snacks")!
+             let url = URL(string: "https://www.peta.org/living/personal-care-fashion/these-companies-dont-test-on-animals/")!
              webView.load(URLRequest(url: url))
              webView.allowsBackForwardNavigationGestures = true
          }
-
 
 }

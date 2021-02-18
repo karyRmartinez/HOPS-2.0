@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     lazy var loginButton: UIButton = {
           let button = UIButton()
           button.setTitle("Hop On", for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
           button.translatesAutoresizingMaskIntoConstraints = false
           button.layer.cornerRadius = 12
          button.addTarget(self, action: #selector(self.startButtonPressed(sender:)), for: .touchUpInside)
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     
     @objc func startButtonPressed(sender: UIButton) {
     //self.animateView(sender)
-    self.navigationController?.pushViewController(FeedViewController(), animated: true)
+    self.navigationController?.pushViewController(MainTabBarViewController(), animated: true)
     }
        
     override func viewDidLoad() {
@@ -63,8 +63,8 @@ class HomeViewController: UIViewController {
         
         imageViewSet.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
         imageViewSet.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        imageViewSet.widthAnchor.constraint(equalToConstant: 200),
-        imageViewSet.heightAnchor.constraint(equalToConstant: 200),
+        imageViewSet.widthAnchor.constraint(equalToConstant: 150),
+        imageViewSet.heightAnchor.constraint(equalToConstant: 150),
         
        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
        loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),

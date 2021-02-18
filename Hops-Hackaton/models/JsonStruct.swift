@@ -19,11 +19,13 @@ struct NewsWrapper: Codable {
 struct Article: Codable {
 //    let source: [Source]?
 //    let author, title, articleDescription: String?
+   //let articleDescription: String?
+    let author: String
     let title: String
-//    let url: String?
+    let url: String
     let urlToImage: String?
 //    let publishedAt: Date?
-//    let content: String?
+   let content: String?
 
 //    enum CodingKeys: String, CodingKey {
 //        case  author, title
