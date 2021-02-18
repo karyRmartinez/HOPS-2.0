@@ -13,10 +13,10 @@ class HomeViewController: UIViewController {
     lazy var titleLabel: UILabel = {
          let label = UILabel()
          label.backgroundColor = .white
-        label.textColor = .systemGreen
          label.textAlignment = .center
+         label.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
          label.text = "HOPS"
-         label.font = UIFont(name: "savoyeLetPlain", size: 50)
+         label.font = UIFont(name: "Optima-BOld", size: 45)
          label.translatesAutoresizingMaskIntoConstraints = false
          return label
      }()

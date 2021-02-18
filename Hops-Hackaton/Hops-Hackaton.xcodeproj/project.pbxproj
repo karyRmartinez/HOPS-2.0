@@ -27,6 +27,8 @@
 		6BD7355925DD9F0C0068FC1F /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7355825DD9F0C0068FC1F /* Products.swift */; };
 		6BD7355B25DDA1AF0068FC1F /* ProductsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7355A25DDA1AF0068FC1F /* ProductsAPIClient.swift */; };
 		6BD7355F25DE33200068FC1F /* CompaniesButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7355E25DE33200068FC1F /* CompaniesButtonViewController.swift */; };
+		6BD7356225DE3E870068FC1F /* Makeup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7356125DE3E870068FC1F /* Makeup.swift */; };
+		6BD7356425DE3EE80068FC1F /* VeganMakeuoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7356325DE3EE80068FC1F /* VeganMakeuoAPIClient.swift */; };
 		6BE4579E25DC3E4700BEF44C /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		6BD7355825DD9F0C0068FC1F /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6BD7355A25DDA1AF0068FC1F /* ProductsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIClient.swift; sourceTree = "<group>"; };
 		6BD7355E25DE33200068FC1F /* CompaniesButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesButtonViewController.swift; sourceTree = "<group>"; };
+		6BD7356125DE3E870068FC1F /* Makeup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Makeup.swift; sourceTree = "<group>"; };
+		6BD7356325DE3EE80068FC1F /* VeganMakeuoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganMakeuoAPIClient.swift; sourceTree = "<group>"; };
 		6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 		6B55696025DAEF2A0044565D = {
 			isa = PBXGroup;
 			children = (
+				6BD7356025DE3E560068FC1F /* APIClients */,
 				6BD7355D25DE32F30068FC1F /* ButtonVIewControllers */,
 				6BD7355C25DE30060068FC1F /* TabViewController */,
 				6B55699525DB9E6C0044565D /* cells */,
@@ -119,6 +124,7 @@
 			children = (
 				6B55698A25DB96610044565D /* JsonStruct.swift */,
 				6BD7355825DD9F0C0068FC1F /* Products.swift */,
+				6BD7356125DE3E870068FC1F /* Makeup.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -126,12 +132,10 @@
 		6B55698C25DB992F0044565D /* networkHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				6B55698D25DB99680044565D /* APIClient.swift */,
 				6B55698F25DB998F0044565D /* AppErrors.swift */,
 				6B55699125DB9AC80044565D /* Secrets.swift */,
 				6B55699325DB9BE70044565D /* NetworkHelperManager.swift */,
 				6BE4579D25DC3E4700BEF44C /* ImageHelper.swift */,
-				6BD7355A25DDA1AF0068FC1F /* ProductsAPIClient.swift */,
 			);
 			path = networkHelpers;
 			sourceTree = "<group>";
@@ -158,6 +162,16 @@
 				6BD7355E25DE33200068FC1F /* CompaniesButtonViewController.swift */,
 			);
 			path = ButtonVIewControllers;
+			sourceTree = "<group>";
+		};
+		6BD7356025DE3E560068FC1F /* APIClients */ = {
+			isa = PBXGroup;
+			children = (
+				6B55698D25DB99680044565D /* APIClient.swift */,
+				6BD7355A25DDA1AF0068FC1F /* ProductsAPIClient.swift */,
+				6BD7356325DE3EE80068FC1F /* VeganMakeuoAPIClient.swift */,
+			);
+			path = APIClients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,7 @@
 				6B55699425DB9BE70044565D /* NetworkHelperManager.swift in Sources */,
 				6B55699925DBA5450044565D /* DetailViewController.swift in Sources */,
 				6BD7355F25DE33200068FC1F /* CompaniesButtonViewController.swift in Sources */,
+				6BD7356225DE3E870068FC1F /* Makeup.swift in Sources */,
 				6B55698625DB47100044565D /* FeedCollectionViewController.swift in Sources */,
 				6B55698E25DB99680044565D /* APIClient.swift in Sources */,
 				6B55697125DAEF2B0044565D /* HomeViewController.swift in Sources */,
@@ -247,6 +262,7 @@
 				6B55696F25DAEF2B0044565D /* SceneDelegate.swift in Sources */,
 				6B55698B25DB96610044565D /* JsonStruct.swift in Sources */,
 				6BD7355925DD9F0C0068FC1F /* Products.swift in Sources */,
+				6BD7356425DE3EE80068FC1F /* VeganMakeuoAPIClient.swift in Sources */,
 				6B3B627B25DC508A00D38279 /* ScannnerViewController.swift in Sources */,
 				6B55698825DB47BF0044565D /* MainHomeTabBarViewController.swift in Sources */,
 			);
