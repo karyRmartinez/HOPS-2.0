@@ -24,9 +24,15 @@ class HomeViewController: UIViewController {
     lazy var imageViewSet : UIImageView = {
     let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "ImageEars")
-           return image
+        image.animationImages = [
+        UIImage(named:"ImageBunnyEars2" )!,
+        UIImage(named:"ImageEars")!
+        ]
+        image.animationDuration = 1
+        return image
+   
        }()
+ 
     lazy var loginButton: UIButton = {
           let button = UIButton()
           button.setTitle("Hop On", for: .normal)
@@ -36,6 +42,27 @@ class HomeViewController: UIViewController {
          button.addTarget(self, action: #selector(self.startButtonPressed(sender:)), for: .touchUpInside)
           return button
       }()
+    lazy var LoginTextField: UITextField = {
+         let textField = UITextField()
+         textField .translatesAutoresizingMaskIntoConstraints = false
+         textField .placeholder = "Email"
+         textField .borderStyle = .none
+         textField .backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+         textField.layer.borderColor = UIColor.black.cgColor
+         return textField
+         
+     }()
+     
+     lazy var passwordTextField: UITextField = {
+         let pstextField = UITextField()
+         pstextField.translatesAutoresizingMaskIntoConstraints = false
+         pstextField.textColor = .black
+         pstextField.isSecureTextEntry = true
+         pstextField.placeholder = "Password"
+         pstextField.borderStyle = .none
+         pstextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+         return pstextField
+     }()
     
     @objc func startButtonPressed(sender: UIButton) {
     //self.animateView(sender)
@@ -46,7 +73,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
          // Do any additional setup after loading the view.
         view.backgroundColor = .white
+        imageViewSet.startAnimating()
         addSubviews()
+        setupLoginStackView()
         settingUpConstraints()
 
     }
@@ -54,6 +83,8 @@ class HomeViewController: UIViewController {
         self.view.addSubview(titleLabel)
         self.view.addSubview(imageViewSet)
         self.view.addSubview(loginButton)
+        self.view.addSubview(LoginTextField)
+        self.view.addSubview(passwordTextField)
     }
     private func settingUpConstraints() {
         NSLayoutConstraint.activate([
@@ -63,8 +94,8 @@ class HomeViewController: UIViewController {
         
         imageViewSet.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
         imageViewSet.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        imageViewSet.widthAnchor.constraint(equalToConstant: 150),
-        imageViewSet.heightAnchor.constraint(equalToConstant: 150),
+        imageViewSet.widthAnchor.constraint(equalToConstant: 100),
+        imageViewSet.heightAnchor.constraint(equalToConstant: 100),
         
        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
        loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
@@ -73,6 +104,19 @@ class HomeViewController: UIViewController {
                    
         ])
     }
+    private func setupLoginStackView() {
+         let stackView = UIStackView(arrangedSubviews: [LoginTextField, passwordTextField])
+         stackView.axis = .vertical
+         stackView.spacing = 15
+         stackView.distribution = .fillEqually
+         self.view.addSubview(stackView)
+         
+         stackView.translatesAutoresizingMaskIntoConstraints = false
+         NSLayoutConstraint.activate([stackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -50),
+             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+         stackView.heightAnchor.constraint(equalToConstant: 130)])
+     }
 
 }
 
