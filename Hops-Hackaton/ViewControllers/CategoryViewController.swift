@@ -35,7 +35,7 @@ class CategoryViewController: UIViewController {
          button.setTitle("Companies", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
      button.layer.cornerRadius = 12
-    //button.addTarget(self, action: #selector(answerButtonPressed(sender:)), for: .touchUpInside)
+    button.addTarget(self, action: #selector(CompaniesButtonPressed(sender:)), for: .touchUpInside)
              return button
          }()
     lazy var foodButton: UIButton = {
@@ -70,6 +70,10 @@ class CategoryViewController: UIViewController {
         self.title = "Explore"
      view.tintColor = .systemGreen
     }
+    @objc func CompaniesButtonPressed(sender: UIButton) {
+       //self.animateView(sender)
+       self.navigationController?.pushViewController(CompaniesButtonViewController(), animated: true)
+       }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
