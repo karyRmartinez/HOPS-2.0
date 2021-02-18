@@ -14,10 +14,11 @@ private let apiClient = NewsAPIManager()
     
     var allNews = [Article]() {
           didSet {
-              collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
           }
       }
-   
+    }
   lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical

@@ -14,6 +14,8 @@ import SafariServices
 class ScannnerViewController: UIViewController {
       var captureSession = AVCaptureSession()
 
+    var productCatalog = [ProductWrapper]()
+    
       // TODO: Make VNDetectBarcodesRequest variable
       lazy var detectBarcodeRequest = VNDetectBarcodesRequest { request, error in
         guard error == nil else {
@@ -26,6 +28,8 @@ class ScannnerViewController: UIViewController {
         self.title = " Scan "
      view.tintColor = .systemGreen
     }
+    
+ 
       // MARK: - Override Functions
       override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,28 +111,34 @@ class ScannnerViewController: UIViewController {
                 potentialQRCode.confidence > 0.9
                 else { return }
 
-              self.observationHandler(payload: potentialQRCode.payloadStringValue)
+                self.observationHandler(for: potentialQRCode.payloadStringValue!)
             }
           }
         }
       }
 
       // MARK: - Handler
-      func observationHandler(payload: String?) {
-        // TODO: Open it in Safari
-        guard
-          let payloadString = payload,
-          let url = URL(string: payloadString),
-          ["http", "https"].contains(url.scheme?.lowercased())
-        else { return }
-
-        let config = SFSafariViewController.Configuration()
-        config.entersReaderIfAvailable = true
-
-        let safariVC = SFSafariViewController(url: url, configuration: config)
-        safariVC.delegate = self
-        present(safariVC, animated: true)
-      }
+        private func observationHandler(for payload: String) {
+          let alertVC = UIAlertController(title: "Vegan", message: "cheezits", preferredStyle: .alert)
+                  alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                  present(alertVC, animated: true, completion: nil)
+        }
+        
+//      func observationHandler(payload: String?) {
+//        // TODO: Open it in Safari
+//        guard
+//          let payloadString = payload,
+//          let url = URL(string: payloadString),
+//          ["http", "https"].contains(url.scheme?.lowercased())
+//        else { return }
+//
+//        let config = SFSafariViewController.Configuration()
+//        config.entersReaderIfAvailable = true
+//
+//        let safariVC = SFSafariViewController(url: url, configuration: config)
+//        safariVC.delegate = self
+//        present(safariVC, animated: true)
+//      }
     }
 
 

@@ -66,10 +66,10 @@ class HomeViewController: UIViewController {
         imageViewSet.widthAnchor.constraint(equalToConstant: 200),
         imageViewSet.heightAnchor.constraint(equalToConstant: 200),
         
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-           loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
-           loginButton.widthAnchor.constraint(equalToConstant: 140),
-           loginButton.heightAnchor.constraint(equalToConstant: 35),
+       loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+       loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
+       loginButton.widthAnchor.constraint(equalToConstant: 140),
+       loginButton.heightAnchor.constraint(equalToConstant: 35),
                    
         ])
     }
