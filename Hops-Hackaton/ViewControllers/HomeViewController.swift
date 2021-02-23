@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
          label.backgroundColor = .white
          label.textAlignment = .center
          label.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-         label.text = "HOPS"
+         label.text = "HOPS 2.0"
          label.font = UIFont(name: "Optima-BOld", size: 45)
          label.translatesAutoresizingMaskIntoConstraints = false
          return label

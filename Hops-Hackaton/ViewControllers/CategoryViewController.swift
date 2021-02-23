@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController {
     lazy var IntroLabel: UILabel = {
         let label = UILabel()
             label.font = UIFont(name: "Optima-BOld", size: 20)
-        label.text = "Vegan and Cruelty Free"
+        label.text = "Vegan And Cruelty Free"
             label.textAlignment = .center
             label.adjustsFontSizeToFitWidth = true
             label.numberOfLines = 2
@@ -47,10 +47,18 @@ class CategoryViewController: UIViewController {
   button.addTarget(self, action: #selector(EatsButtonPressed(sender:)), for: .touchUpInside)
             return button
          }()
-
+     lazy var imageViewSet : UIImageView = {
+     let image = UIImageView()
+         image.translatesAutoresizingMaskIntoConstraints = false
+         image.image = UIImage(named: "symbols")
+         return image
+    
+        }()
+    
     private func addSubview() {
         view.addSubview(stackView)
         view.addSubview(IntroLabel)
+        view.addSubview(imageViewSet)
 
        }
     private lazy var stackView: UIStackView = {
@@ -95,6 +103,11 @@ class CategoryViewController: UIViewController {
        IntroLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -150),
      IntroLabel.widthAnchor.constraint(equalToConstant: 350),
      IntroLabel.heightAnchor.constraint(equalToConstant: 55),
+     
+     imageViewSet.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+          imageViewSet.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 250),
+          imageViewSet.widthAnchor.constraint(equalToConstant: 250),
+          imageViewSet.heightAnchor.constraint(equalToConstant: 150),
          
     ])
      }
