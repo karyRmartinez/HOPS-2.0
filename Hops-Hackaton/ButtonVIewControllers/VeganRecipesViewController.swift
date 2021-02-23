@@ -108,10 +108,7 @@ class VeganRecipesViewController: UIViewController {
 
     extension VeganRecipesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            let selectedRecipe = allRecipes[indexPath.row]
-//            let detailViewController = DetailViewController()
-//            detailViewController.currentRecipes = selectedRecipe
-//            self.navigationController?.pushViewController(detailViewController, animated: true)
+
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

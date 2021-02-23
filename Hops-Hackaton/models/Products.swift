@@ -8,12 +8,10 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Product
 struct ProductWrapper: Codable {
     let dietLabels, healthLabels, cautions: [String]
-   // let totalNutrients, totalDaily: [String: TotalDaily]
     let ingredients: [Ingredient]
- //   let totalNutrientsKCal: TotalNutrientsKCal
 }
 
 // MARK: - Ingredient
@@ -43,17 +41,3 @@ struct TotalDaily: Codable {
     let label: String
     let quantity: Double
 }
-
-
-
-// MARK: - TotalNutrientsKCal
-//struct TotalNutrientsKCal: Codable {
-//    let enercKcal, procntKcal, fatKcal, chocdfKcal: TotalDaily
-//
-//    enum CodingKeys: String, CodingKey {
-//        case enercKcal = "ENERC_KCAL"
-//        case procntKcal = "PROCNT_KCAL"
-//        case fatKcal = "FAT_KCAL"
-//        case chocdfKcal = "CHOCDF_KCAL"
-//    }
-//}
