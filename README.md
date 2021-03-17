@@ -14,7 +14,7 @@ git clone https://github.com/karyRmartinez/HOPS-2.0.git
 
 ```
 
-![](HopsGif.gif)
+![](HopsGIf.gif)
 
 
 ### Barcode
