@@ -14,8 +14,7 @@ git clone https://github.com/karyRmartinez/HOPS-2.0.git
 
 ```
 
-![](ezgif.com-gif-maker.mov.gif)
-
+![](HopsGif.gif)
 ### Barcode
 
 Using VisionFramework
