@@ -22,3 +22,7 @@ git clone https://github.com/karyRmartinez/HOPS-2.0.git
 Using VisionFramework
 * Previewing live video
 * Detecting Barcodes
+
+### APIS
+* https://newsapi.org/
+* https://spoonacular.com/food-api
